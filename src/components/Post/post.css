@@ -1,0 +1,26 @@
+#card-header {
+  background-color: white;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#meme {
+  width: 500px;
+}
+
+.card {
+  margin-top: 40px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.edit-icon {
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+}
