@@ -24,7 +24,7 @@ export const SubmitForm = () => {
             }
         }).then(res => console.log(res.json())).catch(err => console.log(err))
         }else{
-            fetch(`https://pareekshit-xmeme.herokuapp.com/${id}`,{
+            fetch(`https://pareekshit-xmeme.herokuapp.com/memes/${id}`,{
             method: "PATCH",
             body: JSON.stringify(meme),
             headers: {
