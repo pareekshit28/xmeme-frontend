@@ -36,7 +36,7 @@ export const HomePage = ({match}) => {
                 state: {
                     name: '',
                     caption: '',
-                    image: '',
+                    url: '',
                     id: '',
                     method: 'post'
                 }

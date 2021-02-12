@@ -9,8 +9,8 @@ export const SubmitForm = () => {
 
     const history = useHistory()
 
-    const { name, caption, image, id, method } = history.location.state
-    const [meme,setmeme] = useState({name: name, caption: caption, image: image})
+    const { name, caption, url, id, method } = history.location.state
+    const [meme,setmeme] = useState({name: name, caption: caption, url: url})
 
     const onSubmit = e => {
         e.preventDefault()
@@ -18,15 +18,15 @@ export const SubmitForm = () => {
         if(method === 'post'){
             fetch('https://pareekshit-xmeme.herokuapp.com/memes',{
             method:"Post",
-            body: JSON.stringify({meme}),
+            body: JSON.stringify(meme),
             headers: {
                 'Content-Type': 'application/json'
             }
         }).then(res => console.log(res.json())).catch(err => console.log(err))
         }else{
-            fetch(`https://pareekshit-xmeme.herokuapp.com/memes/${id}`,{
+            fetch(`https://pareekshit-xmeme.herokuapp.com/${id}`,{
             method: "PATCH",
-            body: JSON.stringify({meme}),
+            body: JSON.stringify(meme),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -54,9 +54,9 @@ export const SubmitForm = () => {
             </Form.Group>
             <Form.Group>
                 <Form.Label><FiLink2/> Meme URL</Form.Label>
-                <Form.Control className="input" type='url' name="meme[image]"
-                value={meme.image}
-                onChange={e => setmeme({ ...meme, image: e.target.value })} placeholder='Enter url of your meme here'/>
+                <Form.Control className="input" type='url' name="meme[url]"
+                value={meme.url}
+                onChange={e => setmeme({ ...meme, url: e.target.value })} placeholder='Enter url of your meme here'/>
             </Form.Group>
             <Form.Group>
                 <Form.Control className="submit-button" type='submit' name="Submit" value={(method === 'post') ? 'Submit' : 'Update'}/>

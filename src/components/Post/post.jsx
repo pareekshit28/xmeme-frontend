@@ -19,7 +19,7 @@ export const Post = ({data}) => {
                     state: {
                         name: data.name,
                         caption: data.caption,
-                        image: data.image,
+                        url: data.url,
                         id: data._id,
                         method: 'patch'
                     }
@@ -36,7 +36,7 @@ export const Post = ({data}) => {
             </Card.Header>
             <div>
             <Card.Title>{data.caption}</Card.Title>
-            <Card.Img  id="meme" variant="bottom" src={data.image}/>
+            <Card.Img  id="meme" variant="bottom" src={data.url}/>
             </div>
         </Card>
     )
