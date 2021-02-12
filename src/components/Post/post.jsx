@@ -1,17 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
-import { FiEdit } from 'react-icons/fi'
+import { FiEdit, FiClipboard } from 'react-icons/fi'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import './post.css'
 
 export const Post = ({data}) => {
-
+    
     return (
         <Card className="card">
             <Card.Header id="card-header">
                 <div>
-                <p>{data.name}</p><p style={{fontSize:"0.9rem"}}>{data.date.split("T")[0]}</p>
+                <p>{data.name}</p><p style={{fontSize:"0.9rem"}}>{data && data.date && data.date.split("T")[0]}</p>
                 </div>
+                <div>
                 <Link to={{
                     pathname: '/create',
                     state: {
@@ -27,6 +29,10 @@ export const Post = ({data}) => {
                 <FiEdit style={{marginBottom:"6px"}}/> Edit
                 </div>
                 </Link>
+                <CopyToClipboard text={data._id}>
+                    <span className="edit-icon copy-hover"><FiClipboard/> Copy Id</span>
+                </CopyToClipboard>
+                </div>
             </Card.Header>
             <div>
             <Card.Title>{data.caption}</Card.Title>

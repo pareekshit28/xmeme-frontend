@@ -8,8 +8,9 @@ export const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-      <Route path='/create' component={SubmitPage}/>
-      <Route path='/' component={HomePage}/>
+      <Route path='/create' exact component={SubmitPage}/>
+      <Route path='/' exact component={HomePage}/>
+      <Route path='/:postId' component={HomePage}/>
       </Switch>
     </BrowserRouter>
   );

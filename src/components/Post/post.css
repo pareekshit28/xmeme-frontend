@@ -20,7 +20,11 @@ p {
 }
 
 .edit-icon {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: black;
   cursor: pointer;
+}
+
+.copy-hover:hover {
+  text-decoration: underline darkblue;
 }
