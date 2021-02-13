@@ -20,7 +20,7 @@ export const Post = ({data}) => {
                         name: data.name,
                         caption: data.caption,
                         url: data.url,
-                        id: data._id,
+                        id: data.id,
                         method: 'patch'
                     }
                 }
@@ -29,7 +29,7 @@ export const Post = ({data}) => {
                 <FiEdit style={{marginBottom:"6px"}}/> Edit
                 </div>
                 </Link>
-                <CopyToClipboard text={data._id}>
+                <CopyToClipboard text={data.id}>
                     <span className="edit-icon copy-hover"><FiClipboard/> Copy Id</span>
                 </CopyToClipboard>
                 </div>

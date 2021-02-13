@@ -42,7 +42,7 @@ export const SubmitForm = () => {
         <Form onSubmit={onSubmit}>
             <Form.Group>
                 <Form.Label><FiUser/> Meme Owner</Form.Label>
-                <Form.Control className="input" type='name' name="meme[name]"
+                <Form.Control className="input" type='name' name="meme[name]" disabled={ (method === 'patch') ? "disabled" : ""}
                 value={meme.name}
                 onChange={e => setmeme({ ...meme, name: e.target.value })} placeholder='Enter your Name'/>
             </Form.Group>

@@ -28,7 +28,7 @@ export const HomePage = ({match}) => {
     return (
         <div className="bodydiv">
             {
-                (memes.length > 0) ? memes.map( meme => <Post key={meme._id} data={meme}/>) : <Post key={memes._id} data={memes}/> //Returns an array of all the memes 
+                (memes.length > 0) ? memes.map( meme => <Post key={meme.id} data={meme}/>) : <Post key={memes.id} data={memes}/> //Returns an array of all the memes 
             }
             <Navbar/>
             <Link to={{
