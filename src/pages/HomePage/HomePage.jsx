@@ -22,7 +22,7 @@ export const HomePage = ({match}) => {
         }}
     
     // eslint-disable-next-line
-    useEffect(fetchMemes,[memes])
+    useEffect(fetchMemes,[])
 
 
     return (
